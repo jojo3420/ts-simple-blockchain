@@ -21,13 +21,16 @@ printPerson(name, age)
 
 // 2. 타입을 지정할 수 있어 망나니 js 를 java 처럼 엄격하게 사용 하여
 // 버그를 줄이고 결과 예측이 예상된다.
-const sayHi = (username: string, age: number, married: boolean) => {
+const sayHi = (username: string, age: number, married: boolean): void => {
 	console.log(`username: ${username}, age: ${age}, married: ${married}`)
 }
 
 sayHi('jihoon', 33, true)
 
 
+// 3. 함수 리턴 타입 추가
+const sum = (a:number, b:number,):number => a + b
+console.log(sum(1, 2))
 
 
 export {}

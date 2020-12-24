@@ -17,4 +17,7 @@ var sayHi = function (username, age, married) {
     console.log("username: " + username + ", age: " + age + ", married: " + married);
 };
 sayHi('jihoon', 33, true);
+// 3. 함수 리턴 타입 추가
+var sum = function (a, b) { return a + b; };
+console.log(sum(1, 2));
 //# sourceMappingURL=index.js.map
