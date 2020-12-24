@@ -4,24 +4,27 @@ class Block {
 	public index: number;
 	public hash: string;
 	public previousHash: string;
+	public data: string;
 	public timestamp: number;
 
 	constructor(
 		index: number,
 		hash: string,
 		previousHash: string,
+		data: string,
 		timestamp: number,
 	) {
 		this.index = index;
 		this.hash = hash;
 		this.previousHash =previousHash;
+		this.data = data;
 		this.timestamp = timestamp;
 	}
 }
 
 
-const genesisBlock: Block = new Block(0, 'hashnum1234', '', new Date().getTime());
-const secondBlock: Block = new Block(1, 'hashnum5678', genesisBlock.hash, new Date().getTime())
+const genesisBlock: Block = new Block(0, 'hashnum1234', '', 'hello world', new Date().getTime());
+const secondBlock: Block = new Block(1, 'hashnum5678', genesisBlock.hash,'this is data!', new Date().getTime())
 const blockchain: [Block] = [genesisBlock];
 
 blockchain.push(secondBlock)
