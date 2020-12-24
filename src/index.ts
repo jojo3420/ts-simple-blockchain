@@ -1,38 +1,35 @@
+// BlockChain 만들기
 
-// interface 는 타입스크립트 전용으로 컴파일되어도 자바스크립에 없음
-// interface Human {
-// 	name: string,
-// 	age: number,
-// 	married: boolean,
-// }
+class Block {
+	public index: number;
+	public hash: string;
+	public previousHash: string;
+	public timestamp: number;
 
-// 자바스크립트에 모델이 코드할 경우 => class
-
-class Human {
-	public name: string;
-	public age: number;
-
-	// married 는 private 이므로 외부에서 접근 불가
-	// private married: boolean;
-	public married: boolean;
-
-	constructor(name: string, age: number, married: boolean) {
-		this.name = name;
-		this.age = age;
-		this.married = married;
+	constructor(
+		index: number,
+		hash: string,
+		previousHash: string,
+		timestamp: number,
+	) {
+		this.index = index;
+		this.hash = hash;
+		this.previousHash =previousHash;
+		this.timestamp = timestamp;
 	}
 }
 
-const man = {
-	name: 'jojo',
-	age: 20,
-	married: false,
-}
 
-const myNameIs = (person: Human): string => {
-	const { name, age, married } = person;
-	return `my name is ${name}. and I'm ${age} and ${married ? 'married' : 'single'}.`
-}
+const genesisBlock: Block = new Block(0, 'hashnum1234', '', new Date().getTime());
+const secondBlock: Block = new Block(1, 'hashnum5678', genesisBlock.hash, new Date().getTime())
+const blockchain: [Block] = [genesisBlock];
 
-const str = myNameIs(man)
-console.log({ str })
+blockchain.push(secondBlock)
+
+// block type이 아니면 블록체인에 등록 불가능!
+// blockchain.push('string block')
+
+console.log(blockchain)
+
+
+
