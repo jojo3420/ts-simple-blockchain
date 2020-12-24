@@ -23,9 +23,9 @@ class Block {
 }
 
 
-const genesisBlock: Block = new Block(0, 'hashnum1234', '', 'hello world', new Date().getTime());
-const secondBlock: Block = new Block(1, 'hashnum5678', genesisBlock.hash,'this is data!', new Date().getTime())
-const blockchain: [Block] = [genesisBlock];
+const genesisBlock: Block = new Block(0, 'hashnum1234', '', 'hello world', new Date().getTime() /1000);
+const secondBlock: Block = new Block(1, 'hashnum5678', genesisBlock.hash,'this is data!', new Date().getTime() / 1000)
+const blockchain: Block[] = [genesisBlock];
 
 blockchain.push(secondBlock)
 
