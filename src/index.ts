@@ -30,7 +30,7 @@ sayHi('jihoon', 33, true)
 
 // 3. 함수 리턴 타입 추가
 const sum = (a:number, b:number,):number => a + b
-console.log(sum(1, 2))
+console.log(sum(10, 20))
 
 
 export {}
