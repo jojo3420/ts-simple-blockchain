@@ -46,7 +46,7 @@ const genesisBlock: Block = new Block(0, 'genesisblock', '', '사카무라 모�
 const blockchain: Block[] = [genesisBlock];
 
 
-const getBlockchain = (): Block[] => blockchain;
+// const getBlockchain = (): Block[] => blockchain;
 const getLatestBlock = (): Block => blockchain[blockchain.length - 1]
 const getTimestamp = (): number => Math.round(new Date().getTime() / 1000)
 
@@ -96,8 +96,5 @@ const addBlock = (newBlock: Block): void => {
 
 
 console.log(blockchain)
-
-
-
 
 
